@@ -7,7 +7,7 @@ This project bridges hardware and machine learning by analyzing high-frequency m
 ## ⚙️ Hardware Architecture
 *   **Microcontroller:** STM32 Nucleo-64 (ARM Cortex-M core)
 *   **Motor Driver:** L298N Dual H-Bridge (interfacing the MCU logic with the high-current DC motor)
-*   **Sensors:** External vibration/motion sensor
+*   **Sensors:** External vibration/motion sensor - MPU6050
 *   **Communication:** UART Serial Communication configured for high-throughput data streaming (460800 Baud Rate).
 
 ## 🛠️ Software & Toolchain
