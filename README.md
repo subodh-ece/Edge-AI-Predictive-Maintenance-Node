@@ -1,6 +1,6 @@
 # Edge AI Predictive Maintenance Node
 
-An embedded machine learning proof-of-concept deploying a quantized neural network onto an STM32 NUCLEO F401RE microcontroller for real-time motor anomaly detection. 
+An embedded machine learning proof of concept deploying a quantized neural network onto an STM32 NUCLEO F401RE microcontroller for real-time motor anomaly detection. 
 
 This project bridges hardware and machine learning by analyzing high-frequency mechanical vibrations to detect physical imbalances before catastrophic failure occurs, a core concept in industrial Predictive Maintenance (PdM).
 
@@ -18,12 +18,12 @@ This project bridges hardware and machine learning by analyzing high-frequency m
 ##  Machine Learning Implementation
 The model continuously evaluates real-time sensor telemetry against two established classifications:
 1.  **Class 1 (Nominal):** High-frequency vibration of a balanced, healthy motor.
-2.  **Class 2 (Anomaly):** Mechanical imbalance characterized by violent, out-of-distribution physical harmonics.
+2.  **Class 2 (Anomaly):** Mechanical imbalance characterized by violent, out of distribution physical harmonics.
 
-*Note: The model strictly evaluates these two states. Out-of-distribution handling noise (e.g., manual sensor movement) may default to Class 1 due to low-frequency features failing to cross the Class 2 mathematical threshold.*
+*Note: The model strictly evaluates these two states. Out of distribution handling noise (e.g., manual sensor movement) may default to Class 1 due to low-frequency features failing to cross the Class 2 mathematical threshold.*
 
 ## Engineering Constraints & Design Decisions
-Deploying AI on resource-constrained microcontrollers requires strict memory management. 
+Deploying AI on resource constrained microcontrollers requires strict memory management. 
 *   **Memory Optimization:** Floating-point operations for `printf` via `newlib-nano` were explicitly bypassed. Instead of processing float arrays for classification probabilities, the output logic was streamlined into lightweight string literal transmission. 
 *   **Performance:** This prevented heap/stack overflow and reduced the binary footprint, ensuring the real-time inference loop executed without bottlenecking the 460800 baud UART transmission.
 ## Physical Test Rig & Data Collection
